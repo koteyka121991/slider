@@ -36,33 +36,167 @@
             list-style: none;
         }
         
-        .galery {
-            max-width: 1200px;
-            display: flex;
+        .container {
+            max-width: 800px;
             margin: 0 auto;
         }
         
-        .galery-slide {
-            .slick-list {
-                max-height: 450px;
-            }
-        }
-        
-        .galery-wrapper {
-            max-width: 1000px;
-            margin: 0 15px 0 0;
+        .swiper-slide {
             img {
-                width: 100%;
+                max-width: 100%;
             }
         }
         
-        .slick-track {
+        .swiper-button-next,
+        .swiper-button-prev {
+            background: rgb(185, 185, 185);
+            width: 40px;
+            height: 40px;
+            opacity: .8;
+            border-radius: 50%;
+        }
+        
+        .swiper-button-prev:after,
+        .swiper-button-next:after {
+            color: rgb(31, 30, 30);
+            font-size: 30px;
+        }
+        
+        .gallery-top {
+            max-height: 400px;
+        }
+        
+        .gallery-thumbs {
+            margin: 10px 0;
+        }
+        
+        .swiper-slide.active {}
+        
+        @media (max-width: 800px) {
+            .gallery-thumbs {
+                display: none;
+            }
+        }
+        
+        .popup-overlay {
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
             display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
         }
         
-        .slick-list {
-            overflow: hidden;
-            .item {
-                margin: 0 10px;
+        .popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+            transition: all 0.3s ease-in-out;
+            z-index: 10;
+        }
+        
+        // .popup-form {
+        //     display: block;
+        //     text-align: center;
+        //     opacity: 0;
+        //     transition: .5s;
+        //     margin: 30px auto;
+        //     input {
+        //         height: 25px;
+        //         margin: 5px 40px;
+        //         text-align: center;
+        //         border-radius: 30px;
+        //         background: white;
+        //         margin-bottom: 8px;
+        //         color: #014b00;
+        //         font-weight: bold;
+        //         padding: 20px 0;
+        //         border: 2px solid transparent;
+        //         outline: none;
+        //     }
+        // }
+        .popup__content {
+            background: #e1f9e0;
+            margin: 0 10px;
+            position: relative;
+            border-radius: 20px;
+            max-width: 400px;
+            padding: 40px 0 20px;
+            text-align: center;
+            input {
+                height: 30px;
+                border: 2px solid green;
             }
+        }
+        
+        .popup.active {
+            display: block;
+        }
+        
+        .popup-thanks.active {
+            display: block;
+        }
+        
+        .gallery-popup {
+            max-width: 1000px;
+        }
+        
+        // .popup-slide {
+        //     display: none;
+        // }
+        .popup-slide.open {
+            display: block;
+            max-width: 1000px;
+            img {
+                max-width: 100%;
+            }
+        }
+        
+        .btn-close {
+            border: none;
+            cursor: pointer;
+            background: none;
+            padding: 0;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            transition: 1s, opacity .2s;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        
+        .btn-close:hover {
+            transform: scale(1.5);
+        }
+        
+        .btn-close.active {
+            transform: scale(0.9);
+            opacity: .8;
+        }
+        
+        .btn-close::before,
+        .btn-close::after {
+            content: '';
+            background: #014b00;
+            height: 30px;
+            width: 3px;
+            position: absolute;
+            border-radius: 10px;
+            top: 50%;
+        }
+        
+        .btn-close::before {
+            transform: translateY(-50%) rotate(45deg);
+        }
+        
+        .btn-close::after {
+            transform: translateY(-50%) rotate(-45deg);
         }
