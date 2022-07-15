@@ -19,19 +19,6 @@ let galleryThumbs = new Swiper('.gallery-thumbs', {
     loopedSlides: 4
 });
 
-let galleryPopup = new Swiper('.gallery-popup', {
-    spaceBetween: 10,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    loop: true,
-    loopedSlides: 4,
-    autoHeight: true,
-
-
-});
-
 
 galleryTop.controller.control = galleryThumbs;
 galleryThumbs.controller.control = galleryTop;

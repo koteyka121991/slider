@@ -102,61 +102,28 @@
             z-index: 10;
         }
         
-        // .popup-form {
-        //     display: block;
-        //     text-align: center;
-        //     opacity: 0;
-        //     transition: .5s;
-        //     margin: 30px auto;
-        //     input {
-        //         height: 25px;
-        //         margin: 5px 40px;
-        //         text-align: center;
-        //         border-radius: 30px;
-        //         background: white;
-        //         margin-bottom: 8px;
-        //         color: #014b00;
-        //         font-weight: bold;
-        //         padding: 20px 0;
-        //         border: 2px solid transparent;
-        //         outline: none;
-        //     }
-        // }
-        .popup__content {
-            background: #e1f9e0;
-            margin: 0 10px;
-            position: relative;
-            border-radius: 20px;
-            max-width: 400px;
-            padding: 40px 0 20px;
-            text-align: center;
-            input {
-                height: 30px;
-                border: 2px solid green;
-            }
+        .popup-modal {
+            position: fixed;
+            z-index: 10;
+            // top: 50%;
+            // left: 50%;
+            left: 0;
+            top: 15%;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            max-width: 1200px;
+            display: none;
         }
         
-        .popup.active {
-            display: block;
-        }
-        
-        .popup-thanks.active {
-            display: block;
+        .img-active {
+            width: 100%;
         }
         
         .gallery-popup {
             max-width: 1000px;
-        }
-        
-        // .popup-slide {
-        //     display: none;
-        // }
-        .popup-slide.open {
-            display: block;
-            max-width: 1000px;
-            img {
-                max-width: 100%;
-            }
         }
         
         .btn-close {
@@ -171,6 +138,7 @@
             position: absolute;
             top: 0;
             right: 0;
+            z-index: 10;
         }
         
         .btn-close:hover {
